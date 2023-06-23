@@ -68,7 +68,7 @@ char *parse_line(char *line, stack_t **stack, unsigned int line_number)
 void read_file(char *filename, stack_t **stack)
 {
 	char *line;
-	size_t j = 0;
+	size_t i = 0;
 	int line_count = 1;
 	instruct_func s;
 	int check;
@@ -83,7 +83,7 @@ void read_file(char *filename, stack_t **stack)
 		exit(EXIT_FAILURE);
 	}
 
-	while ((read = getline(&var_global.buffer, &j, var_global.file)) != -1)
+	while ((read = getline(&var_global.buffer, &i, var_global.file)) != -1)
 	{
 		line = parse_line(var_global.buffer, stack, line_count);
 		if (line == NULL || line[0] == '#')
@@ -105,7 +105,6 @@ void read_file(char *filename, stack_t **stack)
 	if (check == -1)
 		exit(-1);
 }
-
 /**
  * get_op_func -  this checks opcode and returns the correct function
  * @str: the opcode

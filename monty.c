@@ -1,12 +1,11 @@
 #include "monty.h"
-
 /**
  * main - this is a driver function for monty program
  * @ac: an int num of arguments
  * @av: an opcode file
  * Return: 0
  */
-
+global_var var_global;
 
 int main(int ac, char **av)
 {
